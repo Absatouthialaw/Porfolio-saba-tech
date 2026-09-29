@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '../../context/AuthContext';
-import { Lock, Mail, ArrowRight } from 'lucide-react';
+import { Lock, Mail, ArrowRight, Eye, EyeOff } from 'lucide-react';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -59,8 +60,9 @@ export default function Login() {
                   type="text"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3.5 bg-[#0A0A0A] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#C2185B] transition-colors"
-                  placeholder="absa@admin"
+                  className="w-full pl-11 pr-4 py-3.5 bg-[#0A0A0A] border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-[#C2185B] transition-colors"
+                  placeholder="nom@exemple.com"
+                  autoComplete="username"
                   required
                 />
               </div>
@@ -75,19 +77,28 @@ export default function Login() {
                   <Lock size={18} />
                 </div>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3.5 bg-[#0A0A0A] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#C2185B] transition-colors"
-                  placeholder="••••••••"
+                  className="w-full pl-11 pr-11 py-3.5 bg-[#0A0A0A] border border-white/10 rounded-xl text-white placeholder-gray-600 focus:outline-none focus:border-[#C2185B] transition-colors"
+                  placeholder="Mot de passe"
+                  autoComplete="current-password"
                   required
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-gray-300 transition-colors cursor-pointer"
+                  title={showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 py-4 mt-2 bg-[#C2185B] hover:bg-[#E91E63] text-white rounded-xl font-bold transition-colors shadow-lg shadow-[#C2185B]/25"
+              className="w-full flex items-center justify-center gap-2 py-4 mt-2 bg-[#C2185B] hover:bg-[#E91E63] text-white rounded-xl font-bold transition-colors shadow-lg shadow-[#C2185B]/25 cursor-pointer"
             >
               Se connecter
               <ArrowRight size={18} />
