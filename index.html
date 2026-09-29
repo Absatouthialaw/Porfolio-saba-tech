@@ -1,0 +1,40 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Absatou Thialaw</title>
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=3" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
+      <meta name="description" content="This premium digital portfolio showcases the expertise of a communication and branding consultant, designed to convert visitors into qualified leads through an immersive user experience." />
+      <meta name="robots" content="noindex, nofollow" />
+      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
+      
+    </head>
+
+    <body>
+      
+      <div id="root"></div>
+      <script>
+        try {
+          var raw = localStorage.getItem('portfolioData');
+          if (raw) {
+            var data = JSON.parse(raw);
+            if (data && data.settings) {
+              data.settings.presentationVideoUrl = '/Galerie/video_presentation.mp4';
+              localStorage.setItem('portfolioData', JSON.stringify(data));
+            }
+          }
+        } catch (e) {
+          localStorage.removeItem('portfolioData');
+        }
+      </script>
+      <script type="module" src="/src/main.tsx"></script>
+      
+    </body>
+  </html>
+  

@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+*.zip
+*.log
+Portfolio_Absatou_Thialaw/
+Portfolio_Absatou_Thialaw1/
+Galerie/
+temp_*.txt

@@ -1,0 +1,43 @@
+====================================================================
+ GUIDE DE DÉPLOIEMENT & MISE EN LIGNE — PORTFOLIO ABSATOU THIALAW
+====================================================================
+
+Félicitations ! Ce dossier contient l'ensemble du site de production prêt à être déployé sur n'importe quel hébergeur web (cPanel, Hostinger, OVH, Vercel, Netlify, Cloudflare, etc.).
+
+--------------------------------------------------------------------
+1. CONTENU DU DOSSIER :
+--------------------------------------------------------------------
+- index.html : Point d'entrée principal du site
+- assets/ : Fichiers JavaScript, CSS compilés, icônes et polices
+- Galerie/ : Répertoire complet de tous les médias, vidéos et dossiers maquettes
+- .htaccess : Fichier de redirection pour serveurs Apache / cPanel
+- _redirects : Fichier de redirection pour Netlify / Cloudflare Pages
+- vercel.json : Fichier de configuration pour Vercel
+
+--------------------------------------------------------------------
+2. MÉTHODE DE DÉPLOIEMENT :
+--------------------------------------------------------------------
+
+OPTION A : Hébergement Standard (cPanel / FileZilla / Hostinger / OVH)
+1. Connectez-vous au Gestionnaire de fichiers cPanel ou à votre client FTP (FileZilla).
+2. Ouvrez le dossier racine web : généralement nommé 'public_html' ou 'www'.
+3. Dézippez ou uploadez directement TOUT le contenu de cette archive à la racine de 'public_html'.
+4. Assurez-vous que le fichier '.htaccess' est bien présent à la racine pour la gestion des routes de l'administration (/admin).
+
+OPTION B : Déploiement Drag & Drop (Netlify / Vercel)
+1. Glissez-déposez simplement le dossier 'dist' (ou le contenu extrait de l'archive) sur Netlify Drop (https://app.netlify.com/drop).
+2. Le site sera instantanément en ligne avec certificat SSL (HTTPS) actif.
+
+--------------------------------------------------------------------
+3. ACCÈS D'ADMINISTRATION DU SITE (CMS) :
+--------------------------------------------------------------------
+- URL Admin : https://votre-domaine.com/admin
+- Identifiant : absa@admin
+- Mot de passe : Saba2002@@
+
+--------------------------------------------------------------------
+4. INFORMATIONS TECHNIQUES :
+--------------------------------------------------------------------
+- Stack : React 18, TypeScript, Tailwind CSS, Framer Motion, Lucide Icons, Vite
+- Type : Single Page Application (SPA) ultra-rapide et responsive (Mobile / Tablette / Desktop)
+====================================================================
