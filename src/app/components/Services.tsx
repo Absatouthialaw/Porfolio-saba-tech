@@ -156,7 +156,7 @@ export default function Services() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedService(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/40 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/50 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
@@ -165,25 +165,31 @@ export default function Services() {
               onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-2xl bg-white border border-gray-200 rounded-[1.8rem] sm:rounded-[2rem] overflow-hidden max-h-[90vh] flex flex-col shadow-2xl"
             >
+              {/* Ultra-responsive high z-index Close Button */}
               <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-800 transition-colors"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setSelectedService(null);
+                }}
+                className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 z-50 w-11 h-11 bg-gray-100/90 active:bg-gray-200 hover:bg-gray-200 border border-gray-300/80 rounded-full flex items-center justify-center text-gray-700 hover:text-black transition-all duration-200 shadow-md cursor-pointer touch-manipulation active:scale-90"
                 aria-label="Fermer"
               >
-                <X size={18} />
+                <X size={20} className="stroke-[2.5]" />
               </button>
 
-              <div className="relative p-5 sm:p-8 md:p-10 pb-4 sm:pb-6 border-b border-gray-100 overflow-hidden">
+              <div className="relative p-5 sm:p-8 md:p-10 pr-14 sm:pr-16 pb-4 sm:pb-6 border-b border-gray-100 overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#C2185B]/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-                <div className="relative z-10 flex items-center gap-4 sm:gap-6">
-                  <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 border border-gray-200 flex items-center justify-center shrink-0">
+                <div className="relative z-10 flex items-center gap-3.5 sm:gap-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gray-50 border border-gray-200 flex items-center justify-center shrink-0">
                     {(() => {
                       const SelectedIcon = iconMap[selectedService.iconName];
-                      return <SelectedIcon size={26} style={{ color: selectedService.color }} />;
+                      return <SelectedIcon size={24} style={{ color: selectedService.color }} />;
                     })()}
                   </div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
+                    <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 leading-snug" style={{ fontFamily: 'var(--font-heading)' }}>
                       {selectedService.title}
                     </h3>
                     <p className="text-[#C2185B] text-xs sm:text-sm font-medium" style={{ fontFamily: 'var(--font-ui)' }}>
@@ -216,13 +222,21 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className="p-4 sm:p-6 md:p-8 border-t border-gray-100 bg-gray-50/50 flex justify-end">
+              <div className="p-4 sm:p-6 md:p-8 border-t border-gray-100 bg-gray-50/50 flex flex-col-reverse sm:flex-row items-center justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setSelectedService(null)}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-gray-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100 text-xs sm:text-sm font-semibold transition-colors cursor-pointer text-center"
+                  style={{ fontFamily: 'var(--font-ui)' }}
+                >
+                  Fermer
+                </button>
                 <a
                   href={`https://wa.me/221775216245?text=Bonjour Absatou, je souhaite discuter du service : ${selectedService.title}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setSelectedService(null)}
-                  className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 bg-[#C2185B] text-white rounded-xl hover:bg-[#E91E63] transition-all duration-300 text-xs sm:text-sm font-bold hover:shadow-[0_4px_20px_rgba(194,24,91,0.35)]"
+                  className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 bg-[#C2185B] text-white rounded-xl hover:bg-[#E91E63] transition-all duration-300 text-xs sm:text-sm font-bold shadow-md shadow-[#C2185B]/20"
                   style={{ fontFamily: 'var(--font-ui)' }}
                 >
                   Réserver ce service

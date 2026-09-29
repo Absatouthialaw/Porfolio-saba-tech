@@ -21,7 +21,7 @@ import grandAbout from '../imports/grand_about.jpg';
 import petitAbout from '../imports/absa_rose.png';
 import gradIsepFull from '../imports/grad_isep_full.jpg';
 import gradIsepPortrait from '../imports/grad_isep_portrait.jpg';
-import { Target, Sparkles, TrendingUp, ChevronRight, Lightbulb, CheckCircle2, GraduationCap, Code2, Rocket, ArrowRight, MessageSquare, Paintbrush, Brush, Phone, Mail, MapPin, ExternalLink, Instagram, Linkedin, Facebook, FileText, Download, CreditCard, Globe, X } from 'lucide-react';
+import { Target, Sparkles, TrendingUp, ChevronRight, Lightbulb, CheckCircle2, GraduationCap, Code2, Rocket, ArrowRight, MessageSquare, Paintbrush, Brush, Phone, Mail, MapPin, ExternalLink, Instagram, Linkedin, Facebook, FileText, Download, CreditCard, Globe, X, RotateCw } from 'lucide-react';
 import { usePortfolio } from '../context/PortfolioContext';
 
 // Import Admin layouts/pages
@@ -584,29 +584,44 @@ function Process() {
                   >
                     
                     {/* Front Face */}
-                    <div className="absolute inset-0 bg-white rounded-2xl p-6 sm:p-8 shadow-[0_15px_30px_rgba(0,0,0,0.08)] flex flex-col items-center justify-between text-center [backface-visibility:hidden]">
-                      <div className={`mt-4 ${textColor} transition-transform duration-300 group-hover/card:scale-110`}>
-                        <Icon size={40} strokeWidth={1.5} />
+                    <div className="absolute inset-0 bg-white rounded-2xl p-5 sm:p-7 shadow-[0_15px_30px_rgba(0,0,0,0.08)] flex flex-col items-center justify-between text-center [backface-visibility:hidden]">
+                      <div className={`mt-2 ${textColor} transition-transform duration-300 group-hover/card:scale-110`}>
+                        <Icon size={38} strokeWidth={1.5} />
                       </div>
                       
-                      <h3 className="text-sm font-black text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
-                        {step.title}
-                      </h3>
+                      <div className="space-y-2">
+                        <h3 className="text-sm font-black text-gray-900 uppercase tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>
+                          {step.title}
+                        </h3>
+                        
+                        {/* Interactive Flip Cue Badge for Mobile */}
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10.5px] font-bold text-[#C2185B] bg-pink-50 border border-pink-100/90 shadow-sm transition-transform duration-300 group-hover/card:scale-105">
+                          <RotateCw size={11} className="text-[#C2185B]" />
+                          <span>Toucher pour voir</span>
+                        </span>
+                      </div>
                       
                       {/* Number Circle */}
-                      <div className={`w-11 h-11 rounded-full ${bgColor} text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-lg`} style={{ fontFamily: 'var(--font-heading)' }}>
+                      <div className={`w-10 h-10 rounded-full ${bgColor} text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-lg`} style={{ fontFamily: 'var(--font-heading)' }}>
                         {step.num}
                       </div>
                     </div>
 
                     {/* Back Face */}
-                    <div className="absolute inset-0 bg-white rounded-2xl p-6 sm:p-8 shadow-[0_15px_30px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center [backface-visibility:hidden] [transform:rotateY(180deg)] border-2 border-gray-50">
-                      <h3 className={`text-xs font-black ${textColor} uppercase mb-4 tracking-widest`} style={{ fontFamily: 'var(--font-heading)' }}>
-                        Étape {step.num}
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed font-medium" style={{ fontFamily: 'var(--font-body)' }}>
-                        {step.desc}
-                      </p>
+                    <div className="absolute inset-0 bg-white rounded-2xl p-5 sm:p-7 shadow-[0_15px_30px_rgba(0,0,0,0.08)] flex flex-col items-center justify-between text-center [backface-visibility:hidden] [transform:rotateY(180deg)] border-2 border-pink-50">
+                      <div>
+                        <h3 className={`text-xs font-black ${textColor} uppercase mb-2 tracking-widest`} style={{ fontFamily: 'var(--font-heading)' }}>
+                          Étape {step.num}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+                          {step.desc}
+                        </p>
+                      </div>
+
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold text-gray-500 bg-gray-100 border border-gray-200 shadow-sm">
+                        <RotateCw size={10} />
+                        <span>Retourner</span>
+                      </span>
                     </div>
 
                   </div>
