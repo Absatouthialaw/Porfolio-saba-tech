@@ -425,7 +425,7 @@ function About() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.15 }}
-                      className={`relative bg-white rounded-[2rem] p-5 md:p-6 border border-gray-200 shadow-md shadow-gray-200/50 hover:shadow-xl hover:border-[#C2185B]/40 transition-all duration-300 flex flex-col items-center text-center justify-between min-h-[300px] sm:min-h-[320px] ${
+                      className={`relative bg-white rounded-[2rem] p-6 md:p-7 border border-gray-200 shadow-md shadow-gray-200/50 hover:shadow-xl hover:border-[#C2185B]/40 transition-all duration-300 flex flex-col items-center text-center justify-center min-h-[300px] sm:min-h-[320px] ${
                         index === 0 ? 'sm:translate-y-4' : index === 1 ? 'sm:-translate-y-2' : 'sm:-translate-y-8'
                       }`}
                     >
@@ -437,27 +437,28 @@ function About() {
                         {item.step}
                       </span>
 
-                      <div className="relative z-10 w-full flex flex-col items-center text-center space-y-2.5">
+                      <div className="relative z-10 w-full flex flex-col items-center justify-center text-center space-y-3">
                         {/* Circle checkpoint squircle */}
-                        <div className="w-11 h-11 rounded-2xl bg-[#C2185B] text-white flex items-center justify-center shadow-md shadow-[#C2185B]/25 mx-auto mb-1">
-                          {Icon && <Icon size={19} />}
+                        <div className="w-12 h-12 rounded-2xl bg-[#C2185B] text-white flex items-center justify-center shadow-md shadow-[#C2185B]/25 mx-auto mb-1">
+                          {Icon && <Icon size={20} />}
                         </div>
 
                         <span
-                          className="text-[9px] md:text-[10px] font-bold text-[#C2185B] uppercase tracking-wider block text-center"
+                          className="text-[10px] md:text-[11px] font-bold text-[#C2185B] uppercase tracking-wider block text-center"
                           style={{ fontFamily: 'var(--font-ui)' }}
                         >
                           {item.tag}
                         </span>
 
                         <h4
-                          className="text-sm md:text-base font-bold text-gray-900 leading-snug text-center"
+                          className="text-base sm:text-lg font-bold text-gray-900 leading-snug text-center"
+                          style={{ fontFamily: 'var(--font-heading)' }}
                         >
                           {item.title}
                         </h4>
 
                         <p
-                          className="text-[11px] md:text-xs text-gray-600 leading-relaxed text-center"
+                          className="text-xs sm:text-[13px] text-gray-600 leading-relaxed text-center max-w-[260px] mx-auto"
                           style={{ fontFamily: 'var(--font-body)' }}
                         >
                           {item.description}
@@ -607,19 +608,19 @@ function Process() {
                       </div>
                     </div>
 
-                    {/* Back Face */}
-                    <div className="absolute inset-0 bg-white rounded-2xl p-5 sm:p-7 shadow-[0_15px_30px_rgba(0,0,0,0.08)] flex flex-col items-center justify-between text-center [backface-visibility:hidden] [transform:rotateY(180deg)] border-2 border-pink-50">
-                      <div>
-                        <h3 className={`text-xs font-black ${textColor} uppercase mb-2 tracking-widest`} style={{ fontFamily: 'var(--font-heading)' }}>
+                    {/* Back Face - Vertically and Horizontally Centered */}
+                    <div className="absolute inset-0 bg-white rounded-2xl p-6 sm:p-7 shadow-[0_15px_30px_rgba(0,0,0,0.08)] flex flex-col items-center justify-center text-center [backface-visibility:hidden] [transform:rotateY(180deg)] border-2 border-pink-50 space-y-3 sm:space-y-4">
+                      <div className="space-y-2">
+                        <h3 className={`text-xs font-black ${textColor} uppercase tracking-widest text-center`} style={{ fontFamily: 'var(--font-heading)' }}>
                           Étape {step.num}
                         </h3>
-                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+                        <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium text-center" style={{ fontFamily: 'var(--font-body)' }}>
                           {step.desc}
                         </p>
                       </div>
 
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold text-gray-500 bg-gray-100 border border-gray-200 shadow-sm">
-                        <RotateCw size={10} />
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 border border-gray-200 shadow-sm transition-colors">
+                        <RotateCw size={11} />
                         <span>Retourner</span>
                       </span>
                     </div>
