@@ -61,8 +61,7 @@ export default function SkillsExpertise() {
             className="lg:col-span-6 space-y-5"
           >
             {/* Tag */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-6 h-[1.5px] bg-[#C2185B]" />
+            <div className="mb-2">
               <span
                 className="text-xs sm:text-sm font-bold tracking-[0.25em] text-[#C2185B] uppercase"
                 style={{ fontFamily: 'var(--font-ui)' }}

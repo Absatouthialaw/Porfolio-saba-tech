@@ -72,9 +72,8 @@ export default function ExpertiseMarquee() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-center justify-center gap-2 mb-3"
+          className="flex items-center justify-center mb-3"
         >
-          <span className="w-6 h-[1.5px] bg-[#C2185B]" />
           <span
             className="text-xs sm:text-sm font-bold tracking-[0.25em] text-[#C2185B] uppercase"
             style={{ fontFamily: 'var(--font-ui)' }}

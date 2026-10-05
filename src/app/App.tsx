@@ -226,7 +226,7 @@ function About() {
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-7 space-y-6 flex flex-col justify-center">
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-[#C2185B] font-bold block mb-2.5" style={{ fontFamily: 'var(--font-ui)' }}>
-                — À propos / 02
+                À PROPOS / 02
               </span>
               <h2 style={{ fontFamily: 'var(--font-heading)' }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 Absatou <span className="text-[#C2185B]">Thialaw</span>
@@ -373,7 +373,7 @@ function About() {
                   className="text-xs uppercase tracking-[0.25em] text-[#C2185B] font-bold block mb-2"
                   style={{ fontFamily: 'var(--font-ui)' }}
                 >
-                  — MON PARCOURS & ÉVOLUTION
+                  MON PARCOURS & ÉVOLUTION
                 </span>
                 <h3
                   style={{ fontFamily: 'var(--font-heading)' }}
